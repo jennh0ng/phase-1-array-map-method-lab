@@ -24,12 +24,10 @@ const tutorials = [
 // }
 // titleCased();
 
-const titleCased = (input) => {
-  return tutorials.map( line => {
-    let letters = line.split(' ')
-    let capitalizedTokens =
-      letters.map( token => token.charAt(0).toUpperCase() + token.slice(1) )
-    let response = capitalizedTokens.join(' ')
-    return response
-  });
+const titleCased = () => {
+  return tutorials.map(sentence => {
+    return sentence.split(" ").map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    }).join(" ")
+  })
 }
